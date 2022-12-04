@@ -20,7 +20,6 @@ const AccomodationSchema = new mongoose.Schema({
     owner_phone:String,
     owner_email:String,
     city: String,
+});
 
-})
-//exporting todo field from TodosSchema
 module.exports = mongoose.model('accomodation', AccomodationSchema);

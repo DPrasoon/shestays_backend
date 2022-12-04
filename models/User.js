@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 //schema
-
 const UserSchema = new mongoose.Schema({
     first_name:String,
     middle_name:String,
@@ -19,5 +18,4 @@ const UserSchema = new mongoose.Schema({
     password:String,
 })
 
-//exporting todo field from TodosSchema
 module.exports = mongoose.model('user', UserSchema);

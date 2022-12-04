@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 //schema
-
 const AMSchema = new mongoose.Schema({
     full_name:String,
     email:String,
@@ -13,8 +12,6 @@ const AMSchema = new mongoose.Schema({
     city:String,
     state:String,
     country:String,
-    password:String, //---------------check this
+    password:String,
 })
-
-//exporting todo field from TodosSchema
 module.exports = mongoose.model('areaManager', AMSchema);
