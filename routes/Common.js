@@ -49,7 +49,7 @@ router.post('/feedback', async (req, res) => {
 
 //add new message
 router.post('/contact', async (req, res) => {
-
+    
     const newQuery = new Query(
         req.body 
     );
