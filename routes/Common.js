@@ -2,17 +2,22 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User')
 const Feedback = require('../models/Feedback')
-const Query = require('../models/Query')
+const Query = require('../models/Query');
+const { set } = require('mongoose');
 
 
 // Create new user  
 router.post('/user_registration', async (req, res) => {
-
     const newUser = new User(
         req.body 
     );
-    const savedUser = await newUser.save() // mongo save method
-    res.json(savedUser) // respond with json to our post endpoint
+    try {
+        const savedUser = await newUser.save() // mongo save method
+        res.json(savedUser) // respond with json to our post endpoint
+    } catch (error) {
+        res.status(400).send(error);
+    }
+    
 });
 
 // Update a user profile
