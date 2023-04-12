@@ -28,6 +28,15 @@ router.get('/get_admin/:id', async (req, res) => {
     res.json(admin_details);
 })
 
+// Update admin profile
+router.put('/update', async (req, res) => {
+    const adminUpdate = await Admin.updateOne(
+        { _id: req.body._id },
+        { $set: req.body }
+    );
+    res.json(adminUpdate);
+})
+
 // Get all messages 
 router.get('/view_queries', async (req, res) => {
     const query = await Query.find();
